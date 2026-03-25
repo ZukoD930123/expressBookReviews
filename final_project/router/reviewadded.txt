@@ -1,0 +1,2 @@
+curl command: curl.exe -X DELETE "http://localhost:5000/customer/auth/review/1" -b cookies.txt
+Output :{"message":"No review found for you on this book."}
