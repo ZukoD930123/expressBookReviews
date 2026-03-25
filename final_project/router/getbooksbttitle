@@ -1,0 +1,21 @@
+curl command :curl http://localhost:5000/review/1
+
+
+output :StatusCode        : 200
+StatusDescription : OK
+Content           : {}
+RawContent        : HTTP/1.1 200 OK
+                    Connection: keep-alive
+                    Keep-Alive: timeout=5
+                    Content-Length: 2
+                    Content-Type: text/html; charset=utf-8
+                    Date: Wed, 25 Mar 2026 08:12:13 GMT
+                    ETag: W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"...
+Forms             : {}
+Headers           : {[Connection, keep-alive], [Keep-Alive, timeout=5], [Content-Length, 2], [Content-Type, text/html; 
+                    charset=utf-8]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : System.__ComObject
+RawContentLength  : 2

@@ -1,0 +1,27 @@
+CURL COMMAND : curl http://localhost:5000/title/"Things Fall Apart"
+
+
+OUTPUT:StatusCode        : 200
+StatusDescription : OK
+Content           : [
+                        {
+                            "author": "Chinua Achebe",
+                            "title": "Things Fall Apart",
+                            "reviews": {}
+                        }
+                    ]
+RawContent        : HTTP/1.1 200 OK
+                    Connection: keep-alive
+                    Keep-Alive: timeout=5
+                    Content-Length: 110
+                    Content-Type: text/html; charset=utf-8
+                    Date: Wed, 25 Mar 2026 08:03:36 GMT
+                    ETag: W/"6e-5Z8IMgNEtDSTvUDRdiJGc9LId7...
+Forms             : {}
+Headers           : {[Connection, keep-alive], [Keep-Alive, timeout=5], [Content-Length, 110], [Content-Type, text/html; 
+                    charset=utf-8]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : System.__ComObject
+RawContentLength  : 110

@@ -1,0 +1,23 @@
+ COMMAND: curl http://localhost:5000/isbn/1
+ OUTPUT: StatusCode        : 200
+StatusDescription : OK
+Content           : {
+                        "author": "Chinua Achebe",
+                        "title": "Things Fall Apart",
+                        "reviews": {}
+                    }
+RawContent        : HTTP/1.1 200 OK
+                    Connection: keep-alive
+                    Keep-Alive: timeout=5
+                    Content-Length: 86
+                    Content-Type: text/html; charset=utf-8
+                    Date: Tue, 24 Mar 2026 19:54:42 GMT
+                    ETag: W/"56-b0pQDJi3dXotiSo0GRKeVEkGfkI...
+Forms             : {}
+Headers           : {[Connection, keep-alive], [Keep-Alive, timeout=5], [Content-Length, 86], [Content-Type, text/html; 
+                    charset=utf-8]...}
+Images            : {}
+InputFields       : {}
+Links             : {}
+ParsedHtml        : System.__ComObject
+RawContentLength  : 86
