@@ -4,18 +4,16 @@ const regd_users = express.Router();
 
 let users = [{username: "testuser", password: "testpassword"}];
 
-const isValid = (username)=>{
-  let userswithsamename = users.filter((user)=>{
-    return user.username === username
-  });
-  return userswithsamename.length > 0;
-}
+const isValid = (username) => {
+  return users.some((user) => user.username === username);
+};
+
 const authenticatedUser = (username, password) => {
   let validusers = users.filter((user) => {
-    return (user.username === username && user.password === password)
+    return (user.username === username && user.password === password);
   });
   return validusers.length > 0;
-}
+};
 // TASK 6: Register a new user
 regd_users.post("/register", (req, res) => {
   const username = req.body.username;
@@ -33,6 +31,7 @@ regd_users.post("/register", (req, res) => {
 });
 //only registered users can login
 // TASK 7: Login
+// TASK 7: Login
 regd_users.post("/login", (req, res) => {
   const username = req.body.username;
   const password = req.body.password;
@@ -46,7 +45,6 @@ regd_users.post("/login", (req, res) => {
       data: password
     }, 'access', { expiresIn: 60 * 60 });
 
-    // Store the token and username in the session
     req.session.authorization = {
       accessToken, username
     }
