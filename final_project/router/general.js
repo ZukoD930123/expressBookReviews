@@ -97,29 +97,35 @@ public_users.get('/author/:author', async function (req, res) {
     }
 });
 
-// Get book details based on title
+// Task 13: Get book details based on Title using Promises
 public_users.get('/title/:title', function (req, res) {
   const title = req.params.title;
-  const keys = Object.keys(books);
-  const results = [];
 
-  keys.forEach((key) => {
-    if (books[key].title === title) {
-      results.push({
-        "isbn": key,
-        "author": books[key].author,
-        "reviews": books[key].reviews
-      });
+  const findByTitle = new Promise((resolve, reject) => {
+    const keys = Object.keys(books);
+    const filtered_books = keys
+      .filter(key => books[key].title === title)
+      .map(key => ({
+        isbn: key,
+        author: books[key].author,
+        reviews: books[key].reviews
+      }));
+
+    if (filtered_books.length > 0) {
+      resolve(filtered_books);
+    } else {
+      reject("Title not found");
     }
   });
 
-  if (results.length > 0) {
-    return res.status(200).send(JSON.stringify({ booksbytitle: results }, null, 4));
-  } else {
-    return res.status(404).json({ message: "Title not found" });
-  }
+  findByTitle
+    .then((results) => {
+      res.status(200).send(JSON.stringify({ booksbytitle: results }, null, 4));
+    })
+    .catch((err) => {
+      res.status(404).json({ message: err });
+    });
 });
-
 
 
 // Get book review
